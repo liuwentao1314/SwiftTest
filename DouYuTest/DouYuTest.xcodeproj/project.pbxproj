@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7E171A36222FBE8800D1BA12 /* HTTPRequestTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E171A35222FBE8800D1BA12 /* HTTPRequestTools.swift */; };
 		7E313967221A7EB100F5F3D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E313966221A7EB100F5F3D7 /* AppDelegate.swift */; };
-		7E313969221A7EB100F5F3D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E313968221A7EB100F5F3D7 /* ViewController.swift */; };
 		7E31396C221A7EB100F5F3D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E31396A221A7EB100F5F3D7 /* Main.storyboard */; };
 		7E31396E221A7EB300F5F3D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E31396D221A7EB300F5F3D7 /* Assets.xcassets */; };
 		7E313971221A7EB300F5F3D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E31396F221A7EB300F5F3D7 /* LaunchScreen.storyboard */; };
@@ -41,7 +40,6 @@
 		7E171A35222FBE8800D1BA12 /* HTTPRequestTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestTools.swift; sourceTree = "<group>"; };
 		7E313963221A7EB000F5F3D7 /* DouYuTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYuTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E313966221A7EB100F5F3D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E313968221A7EB100F5F3D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E31396B221A7EB100F5F3D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E31396D221A7EB300F5F3D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E313970221A7EB300F5F3D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +96,61 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7E171A37223243A000D1BA12 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7E171A3B223243A000D1BA12 /* Profile */,
+				7E171A3A223243A000D1BA12 /* Follow */,
+				7E171A3C223243A000D1BA12 /* Live */,
+				7E171A38223243A000D1BA12 /* Home */,
+				7E171A3D223243A000D1BA12 /* Main */,
+				7E171A39223243A000D1BA12 /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7E171A38223243A000D1BA12 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7E171A39223243A000D1BA12 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		7E171A3A223243A000D1BA12 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		7E171A3B223243A000D1BA12 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7E171A3C223243A000D1BA12 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		7E171A3D223243A000D1BA12 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		7E31395A221A7EB000F5F3D7 = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +176,8 @@
 		7E313965221A7EB000F5F3D7 /* DouYuTest */ = {
 			isa = PBXGroup;
 			children = (
+				7E171A37223243A000D1BA12 /* Classes */,
 				7E313966221A7EB100F5F3D7 /* AppDelegate.swift */,
-				7E313968221A7EB100F5F3D7 /* ViewController.swift */,
 				7E171A35222FBE8800D1BA12 /* HTTPRequestTools.swift */,
 				7E31396A221A7EB100F5F3D7 /* Main.storyboard */,
 				7E31396D221A7EB300F5F3D7 /* Assets.xcassets */,
@@ -333,7 +386,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E171A36222FBE8800D1BA12 /* HTTPRequestTools.swift in Sources */,
-				7E313969221A7EB100F5F3D7 /* ViewController.swift in Sources */,
 				7E313967221A7EB100F5F3D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
