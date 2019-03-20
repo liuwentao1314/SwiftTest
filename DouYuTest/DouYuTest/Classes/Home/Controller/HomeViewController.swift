@@ -12,12 +12,31 @@ private let titleViewHeight : CGFloat = 40
 
 class HomeViewController: UIViewController {
 
-    private lazy var pageTitleView : PageTitleView = {
-        let titleFrame = CGRect(x: 0, y: 64, width: ScreenWidth, height: titleViewHeight)
+    private lazy var pageTitleView : PageTitleView = {[weak self] in
+        let titleFrame = CGRect(x: 0, y:LStatusBarH + LNavBarH , width: ScreenWidth, height: titleViewHeight)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        titleView.delegate = self
         return titleView
     }()
+    
+    private lazy var pageContentView : PageContentView = {[weak self] in
+        let contentViewH : CGFloat = ScreenHeight - (LStatusBarH + LNavBarH + titleViewHeight) - TabbarHeight
+        let contentFrame = CGRect(x: 0, y: LStatusBarH + LNavBarH + titleViewHeight, width: ScreenWidth, height: contentViewH)
+        var childVcs = [UIViewController]()
+        childVcs.append(RecommendViewController())
+        for _ in 0..<3 {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor.init(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            childVcs.append(vc)
+        }
+
+        let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        contentView.delegate = self
+        return contentView
+    }()
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +53,11 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     
     private func setupUI() {
-        //不需要调整UIscrollView的e内边距
+        //不需要调整UIscrollView的内边距
 //        automaticallyAdjustsScrollViewInsets = false
         setupNavBar()
         view .addSubview(pageTitleView)
+        view.addSubview(pageContentView)
     }
     
     private func setupNavBar() {
@@ -70,3 +90,19 @@ extension HomeViewController {
         navigationItem.rightBarButtonItems = [searchItem,qrcodeItem]
     }
 }
+
+extension HomeViewController : PageTitleViewDelegate {
+    func pageTitleView(titleView: PageTitleView, selectedIndex Index: Int) {
+        print(Index)
+        pageContentView.setCurrentIndex(currentIndex: Index)
+    }
+}
+
+extension HomeViewController : PageContentViewDelegate {
+
+    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleWithProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+
+}
+

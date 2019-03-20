@@ -8,10 +8,11 @@
 
 import UIKit
 
-let LStatusBarH = 20
-let LNavBarH = 44
+let LStatusBarH : CGFloat = 20
+let LNavBarH : CGFloat = 44
 let ScreenWidth = UIScreen.main.bounds.width
 let ScreenHeight = UIScreen.main.bounds.height
+let TabbarHeight : CGFloat = 49
 
 
 
