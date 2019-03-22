@@ -115,6 +115,10 @@ extension PageTitleView {
         guard let currentLabel = tapGes.view as? UILabel else {
             return
         }
+        
+        //如果重复点击是一个title，则直接返回
+        if currentLabel.tag == currentIndex { return }
+        
         //2.获取之前的label
         let oldLabel = titleLabels[currentIndex]
         

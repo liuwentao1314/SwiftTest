@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Alamofire
 
 private let kItemMargin : CGFloat = 10
 private let kItemW : CGFloat = (ScreenWidth - 3 * kItemMargin)/2
 private let kNormalItemH : CGFloat = kItemW * 3/4
 private let kPrettyItemH : CGFloat = kItemW * 4/3
 private let kHeaderViewH : CGFloat = 50
+private let kCycleViewH : CGFloat = ScreenWidth * 3/8
+private let kGameViewH : CGFloat = 90
 
 private let cellId = "cellId"
 private let prettyCellId = "prettyCellId"
@@ -21,6 +24,7 @@ private let sessionHeaderId = "sessionHeaderId"
 class RecommendViewController: UIViewController {
 
     //MARK: 懒加载
+    private lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     private lazy var collectionView : UICollectionView = {[unowned self] in
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: kItemW, height: kNormalItemH)
@@ -40,10 +44,21 @@ class RecommendViewController: UIViewController {
         
         collectionView.register(UINib(nibName: "CollectionPrettyViewCell", bundle: nil), forCellWithReuseIdentifier: prettyCellId)
         
-       
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: sessionHeaderId)
         
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH + kGameViewH, left: 0, bottom: 0, right: 0)
+        
         return collectionView
+    }()
+    private lazy var cycleView : RecommenCycleView = {
+        let cycleView = RecommenCycleView.recommentCycleView()
+        cycleView.frame = CGRect(x: 0, y: -(kCycleViewH + kGameViewH), width: ScreenWidth, height: kCycleViewH)
+        return cycleView
+    }()
+    private lazy var gameView : RecommendGameView = {
+        let gameView = RecommendGameView.recommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: ScreenWidth, height: kGameViewH)
+        return gameView
     }()
     
     override func viewDidLoad() {
@@ -53,20 +68,33 @@ class RecommendViewController: UIViewController {
 
         setupUI()
         
-        
-        
-        
+        loadData()
+ 
     }
 
 
 }
 
+//MARK: 设置界面
 extension RecommendViewController {
     private func setupUI() {
         
         view.addSubview(collectionView)
+        collectionView.addSubview(cycleView)
+        collectionView.addSubview(gameView)
+    }
+}
+
+//MARK: 请求数据
+extension RecommendViewController {
+    private func loadData() {
+        recommendVM.requestData()
         
-        
+        recommendVM.requestCycleData {
+            
+            self.cycleView.cycleImgData = self.recommendVM.cycleData
+            
+        }
     }
 }
 
