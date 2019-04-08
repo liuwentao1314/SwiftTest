@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="CollectionHeaderView" customModule="DouYuTest" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="143"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
@@ -30,8 +30,8 @@
                         <constraint firstAttribute="width" constant="18" id="p8T-ba-OMS"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="颜值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKx-sO-Yi8">
-                    <rect key="frame" x="33" y="21.5" width="29" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="颜值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKx-sO-Yi8">
+                    <rect key="frame" x="36" y="22" width="29" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -60,6 +60,11 @@
                 <constraint firstItem="Ci5-h3-idt" firstAttribute="top" secondItem="3ka-Ca-JYS" secondAttribute="bottom" constant="11" id="t0N-WM-WfU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="imageView" destination="Ci5-h3-idt" id="rEr-SM-he9"/>
+                <outlet property="moreBtn" destination="hro-wd-L1O" id="Cgp-cZ-YPT"/>
+                <outlet property="titleLabel" destination="FKx-sO-Yi8" id="kjt-Hs-FO2"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="167.76611694152925"/>
         </collectionReusableView>
     </objects>

@@ -29,7 +29,7 @@
         <!--首页-->
         <scene sceneID="dqf-iS-b7v">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AFf-qr-hXK" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AFf-qr-hXK" customClass="CustomNavigationController" customModule="DouYuTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="tab_home" selectedImage="tab_home_select" id="5g0-gQ-VYP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YWG-92-e2P">
