@@ -10,17 +10,88 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Live View Controller-->
         <scene sceneID="Svu-e5-1Bl">
             <objects>
-                <viewController id="ihR-H3-pKE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="W7g-1O-fAf">
+                <viewController id="ihR-H3-pKE" customClass="LiveViewController" customModule="DouYuTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W7g-1O-fAf" customClass="Live">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqU-dX-CB9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIJ-fC-cV3">
+                                        <rect key="frame" x="166" y="108" width="43" height="84"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqT-he-WTm">
+                                        <rect key="frame" x="267" y="9" width="98" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resetBtnDidClicked:" destination="ihR-H3-pKE" eventType="touchUpInside" id="toV-xl-hCc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XIJ-fC-cV3" firstAttribute="centerY" secondItem="kqU-dX-CB9" secondAttribute="centerY" id="0kF-V1-mA5"/>
+                                    <constraint firstItem="XIJ-fC-cV3" firstAttribute="centerX" secondItem="kqU-dX-CB9" secondAttribute="centerX" id="L55-EZ-CMi"/>
+                                    <constraint firstAttribute="height" constant="300" id="kPT-1B-HTX"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLY-Dx-u8i">
+                                <rect key="frame" x="0.0" y="364" width="187.5" height="303"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.59215686270000001" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="开始">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startBtnDidClicked:" destination="ihR-H3-pKE" eventType="touchUpInside" id="rTa-ly-obP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PD4-ny-X2N">
+                                <rect key="frame" x="187.5" y="364" width="187.5" height="303"/>
+                                <color key="backgroundColor" red="0.8907679422" green="0.56019866839999999" blue="0.097091387119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="暂停">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseBtnDidClicked:" destination="ihR-H3-pKE" eventType="touchUpInside" id="yG0-F3-wlZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PD4-ny-X2N" firstAttribute="width" secondItem="QLY-Dx-u8i" secondAttribute="width" id="AKd-cV-m10"/>
+                            <constraint firstItem="H3j-Dl-of7" firstAttribute="trailing" secondItem="PD4-ny-X2N" secondAttribute="trailing" id="C7q-ko-RQY"/>
+                            <constraint firstItem="QLY-Dx-u8i" firstAttribute="top" secondItem="kqU-dX-CB9" secondAttribute="bottom" id="LfF-CO-qP4"/>
+                            <constraint firstItem="QLY-Dx-u8i" firstAttribute="leading" secondItem="H3j-Dl-of7" secondAttribute="leading" id="NoY-jK-Ume"/>
+                            <constraint firstItem="PD4-ny-X2N" firstAttribute="leading" secondItem="QLY-Dx-u8i" secondAttribute="trailing" id="XOI-6x-AYG"/>
+                            <constraint firstItem="PD4-ny-X2N" firstAttribute="top" secondItem="kqU-dX-CB9" secondAttribute="bottom" id="Yfs-Mk-BYv"/>
+                            <constraint firstItem="H3j-Dl-of7" firstAttribute="trailing" secondItem="kqU-dX-CB9" secondAttribute="trailing" id="bWo-JG-Yso"/>
+                            <constraint firstItem="H3j-Dl-of7" firstAttribute="bottom" secondItem="QLY-Dx-u8i" secondAttribute="bottom" id="ehG-vE-Zsb"/>
+                            <constraint firstItem="kqU-dX-CB9" firstAttribute="top" secondItem="H3j-Dl-of7" secondAttribute="top" id="iSB-sM-wpt"/>
+                            <constraint firstItem="kqU-dX-CB9" firstAttribute="leading" secondItem="H3j-Dl-of7" secondAttribute="leading" id="oAU-sj-mV4"/>
+                            <constraint firstItem="H3j-Dl-of7" firstAttribute="bottom" secondItem="PD4-ny-X2N" secondAttribute="bottom" id="suh-v4-RQO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="H3j-Dl-of7"/>
                     </view>
                     <navigationItem key="navigationItem" id="JwO-Un-fgD"/>
+                    <connections>
+                        <outlet property="countLabel" destination="XIJ-fC-cV3" id="mHQ-YA-kaE"/>
+                        <outlet property="pauseBtn" destination="PD4-ny-X2N" id="RR4-GD-kHg"/>
+                        <outlet property="resetBtn" destination="mqT-he-WTm" id="qUn-79-0UW"/>
+                        <outlet property="startBtn" destination="QLY-Dx-u8i" id="DrJ-2R-tly"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kus-nl-OWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

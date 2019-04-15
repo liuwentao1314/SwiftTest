@@ -29,6 +29,13 @@
 	<string>123</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>456</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gaspar Regular.otf</string>
+		<string>MFJinHei_Noncommercial-Regular.ttf</string>
+		<string>MFTongXin_Noncommercial-Regular.ttf</string>
+		<string>MFZhiHei_Noncommercial-Regular.ttf</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
